@@ -25,9 +25,9 @@ Créez une seconde page permettant de lister les utilisateurs inscrits via la pa
 Mettez en place les tests unitaires que vous pensez être nécessaires pour que votre code soit robuste.
 
 # Voici les critères qui entreront en compte dans la validation du test de notre côté.
- 1 - Code fonctionnel - Assurez vous que votre code puisse fonctionner lors de son utilisation sur un autre ordinateur que le votre (Vous pouvez éventuellement le hoster chez Heroku par exemple).
-2 - Qualité du code - Votre code devra être le plus simple à comprendre possible.
-3 - Architecture du code - Veillez à ce que votre code soit bien compartimenté selon les bonnes pratiques qui existent sur le Web
-4 - Interface: Une attention particulière sera apportée au contrôles de cohérence - Pas la peine d'élaborer un design particulier ou un CSS complexe.
-5 - Tests: Veillez à ce que les tests unitaires soient utiles et fonctionnent correctement (pas la peine de mettre des dizaines de tests en place non-plus).
+### 1 - Code fonctionnel - Assurez vous que votre code puisse fonctionner lors de son utilisation sur un autre ordinateur que le votre (Vous pouvez éventuellement le hoster chez Heroku par exemple).
+### 2 - Qualité du code - Votre code devra être le plus simple à comprendre possible.
+### 3 - Architecture du code - Veillez à ce que votre code soit bien compartimenté selon les bonnes pratiques qui existent sur le Web
+### 4 - Interface: Une attention particulière sera apportée au contrôles de cohérence - Pas la peine d'élaborer un design particulier ou un CSS complexe.
+### 5 - Tests: Veillez à ce que les tests unitaires soient utiles et fonctionnent correctement (pas la peine de mettre des dizaines de tests en place non-plus).
 
