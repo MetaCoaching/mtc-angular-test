@@ -18,14 +18,6 @@ describe('AppComponent', () => {
 
   it(`should have as title 'mtc-angular-test'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('mtc-angular-test');
-  });
-
-  it('should render Hello World', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('div').textContent).toEqual('Hello World!');
+    expect(document.title).toEqual('mtc-angular-test');
   });
 });

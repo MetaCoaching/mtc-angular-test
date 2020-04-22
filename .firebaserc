@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "users-aa6ac": {
+      "hosting": {
+        "mtc-angular-test": [
+          "users-aa6ac"
+        ]
+      }
+    }
+  }
+}

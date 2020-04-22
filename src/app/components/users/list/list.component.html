@@ -1,0 +1,11 @@
+<div>
+  <mat-list>
+    <mat-list-item *ngFor="let user of users | async">
+      <mat-icon matListIcon>person</mat-icon>
+      <span matLine>{{ user.firstName }} {{ user.lastName }}</span>
+      <span matLine>{{ user.birthDate.toLocaleDateString() }}</span>
+      <span matLine>{{ user.email }}</span>
+      <span matLine>{{ user.phone }}</span>
+    </mat-list-item>
+  </mat-list>
+</div>

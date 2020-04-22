@@ -8,10 +8,8 @@ describe('App', () => {
     page = new AppPage();
   });
 
-  it('should display Hello World', () => {
-    page.navigateTo();
-    expect(page.getHelloWorld()).toEqual('Hello World!');
-  });
+  // TODO: run a scenario from the starting page to the list or registration page
+  // once all components have been created
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser

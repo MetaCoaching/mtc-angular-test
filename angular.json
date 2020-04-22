@@ -117,8 +117,13 @@
               "devServerTarget": "mtc-angular-test:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "mtc-angular-test"
 }
