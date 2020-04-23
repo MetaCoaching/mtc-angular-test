@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  FormGroupDirective,
+} from '@angular/forms';
 
 import { UserService } from '../shared/users.service';
 
@@ -10,6 +15,9 @@ import { UserService } from '../shared/users.service';
 })
 export class UserRegisterComponent implements OnInit {
   formGroup: FormGroup;
+  minBirthDate = new Date('1900-01-01');
+  maxBirthDate = new Date();
+  @ViewChild(FormGroupDirective) formRef: FormGroupDirective;
 
   constructor(private formBuilder: FormBuilder, private service: UserService) {}
 
@@ -23,15 +31,25 @@ export class UserRegisterComponent implements OnInit {
     });
   }
 
-  getRequiredErrorMessage() {
-    return 'Required';
-  }
+  getErrorMessage(type: string) {
+    let message: string;
 
-  getFormatErrorMessage() {
-    return 'Invalid Format';
+    switch (type) {
+      case 'date':
+        message = 'Invalid Birth Date';
+        break;
+      case 'format':
+        message = 'Invalid Format';
+        break;
+      default:
+        message = 'Required';
+    }
+    return message;
   }
 
   onSubmit(formGroup: FormGroup) {
     this.service.postUser(formGroup.value);
+    this.formRef.resetForm();
+    formGroup.reset();
   }
 }

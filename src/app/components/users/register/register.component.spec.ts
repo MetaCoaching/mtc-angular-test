@@ -31,12 +31,10 @@ describe('UserRegisterComponent', () => {
     expect(component.formGroup instanceof FormGroup).toBeTrue();
   });
 
-  it('should get required error message', () => {
-    expect(component.getRequiredErrorMessage()).toEqual('Required');
-  });
-
-  it('should get format error message', () => {
-    expect(component.getFormatErrorMessage()).toEqual('Invalid Format');
+  it('should get error messages', () => {
+    expect(component.getErrorMessage('date')).toEqual('Invalid Birth Date');
+    expect(component.getErrorMessage('format')).toEqual('Invalid Format');
+    expect(component.getErrorMessage('required')).toEqual('Required');
   });
 
   it('should submit the form', () => {
@@ -55,6 +53,7 @@ describe('UserRegisterComponent', () => {
     formGroup.get('birthDate').setValue(user.birthDate);
     formGroup.get('email').setValue(user.email);
     formGroup.get('phone').setValue(user.phone);
+
     component.onSubmit(component.formGroup);
 
     expect(spy).toHaveBeenCalledWith(user);

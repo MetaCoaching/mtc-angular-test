@@ -1,5 +1,6 @@
 <div>
-  <mat-list>
+  <h2 class="listTitle">List</h2>
+  <mat-list class="userList">
     <mat-list-item *ngFor="let user of users | async">
       <mat-icon matListIcon>person</mat-icon>
       <span matLine>{{ user.firstName }} {{ user.lastName }}</span>
