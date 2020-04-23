@@ -8,36 +8,48 @@
     <mat-form-field>
       <mat-label>First Name</mat-label>
       <input formControlName="firstName" matInput required type="text" />
-      <mat-error *ngIf="formGroup.get('firstName').hasError('required')">{{
-        getErrorMessage("required")
-      }}</mat-error>
+      <mat-error
+        data-id="firstNameRequired"
+        *ngIf="formGroup.get('firstName').hasError('required')"
+        >{{ getErrorMessage("required") }}</mat-error
+      >
     </mat-form-field>
     <mat-form-field>
       <mat-label>Last Name</mat-label>
       <input formControlName="lastName" matInput required type="text" />
-      <mat-error *ngIf="formGroup.get('lastName').hasError('required')">{{
-        getErrorMessage("required")
-      }}</mat-error>
+      <mat-error
+        data-id="lastNameRequired"
+        *ngIf="formGroup.get('lastName').hasError('required')"
+        >{{ getErrorMessage("required") }}</mat-error
+      >
     </mat-form-field>
     <mat-form-field>
       <mat-label>Phone Number</mat-label>
       <input formControlName="phone" matInput required type="tel" />
-      <mat-error *ngIf="formGroup.get('phone').hasError('pattern')">{{
-        getErrorMessage("format")
-      }}</mat-error>
-      <mat-error *ngIf="formGroup.get('phone').hasError('required')">{{
-        getErrorMessage("required")
-      }}</mat-error>
+      <mat-error
+        data-id="phoneFormat"
+        *ngIf="formGroup.get('phone').hasError('pattern')"
+        >{{ getErrorMessage("format") }}</mat-error
+      >
+      <mat-error
+        data-id="phoneRequired"
+        *ngIf="formGroup.get('phone').hasError('required')"
+        >{{ getErrorMessage("required") }}</mat-error
+      >
     </mat-form-field>
     <mat-form-field>
       <mat-label>Email Address</mat-label>
       <input formControlName="email" matInput required type="email" />
-      <mat-error *ngIf="formGroup.get('email').hasError('email')">{{
-        getErrorMessage("format")
-      }}</mat-error>
-      <mat-error *ngIf="formGroup.get('email').hasError('required')">{{
-        getErrorMessage("required")
-      }}</mat-error>
+      <mat-error
+        data-id="emailFormat"
+        *ngIf="formGroup.get('email').hasError('email')"
+        >{{ getErrorMessage("format") }}</mat-error
+      >
+      <mat-error
+        data-id="emailRequired"
+        *ngIf="formGroup.get('email').hasError('required')"
+        >{{ getErrorMessage("required") }}</mat-error
+      >
     </mat-form-field>
     <mat-form-field>
       <mat-label>Birth Date</mat-label>
@@ -52,6 +64,7 @@
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
       <mat-error
+        data-id="birthDateMinMax"
         *ngIf="
           formGroup.get('birthDate').hasError('matDatepickerMin') ||
           formGroup.get('birthDate').hasError('matDatepickerMax')
@@ -59,12 +72,15 @@
         >{{ getErrorMessage("date") }}</mat-error
       >
       <mat-error
+        data-id="birthDateParse"
         *ngIf="formGroup.get('birthDate').hasError('matDatepickerParse')"
         >{{ getErrorMessage("format") }}</mat-error
       >
-      <mat-error *ngIf="formGroup.get('birthDate').hasError('required')">{{
-        getErrorMessage("required")
-      }}</mat-error>
+      <mat-error
+        data-id="birthDateRequired"
+        *ngIf="formGroup.get('birthDate').hasError('required')"
+        >{{ getErrorMessage("required") }}</mat-error
+      >
     </mat-form-field>
     <button
       color="primary"
