@@ -1,0 +1,51 @@
+<form (ngSubmit)="onSubmit(formGroup)" [formGroup]="formGroup">
+  <mat-form-field>
+    <mat-label>First Name</mat-label>
+    <input formControlName="firstName" matInput required type="text" />
+    <mat-error *ngIf="formGroup.get('firstName').hasError('required')">{{
+      getRequiredErrorMessage()
+    }}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Last Name</mat-label>
+    <input formControlName="lastName" matInput required type="text" />
+    <mat-error *ngIf="formGroup.get('lastName').hasError('required')">{{
+      getRequiredErrorMessage()
+    }}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Phone Number</mat-label>
+    <input formControlName="phone" matInput required type="tel" />
+    <mat-error *ngIf="formGroup.get('phone').hasError('pattern')">{{
+      getFormatErrorMessage()
+    }}</mat-error>
+    <mat-error *ngIf="formGroup.get('phone').hasError('required')">{{
+      getRequiredErrorMessage()
+    }}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email Address</mat-label>
+    <input formControlName="email" matInput required type="email" />
+    <mat-error *ngIf="formGroup.get('email').hasError('email')">{{
+      getFormatErrorMessage()
+    }}</mat-error>
+    <mat-error *ngIf="formGroup.get('email').hasError('required')">{{
+      getRequiredErrorMessage()
+    }}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Birth Date</mat-label>
+    <input
+      formControlName="birthDate"
+      [matDatepicker]="picker"
+      matInput
+      required
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="formGroup.get('birthDate').hasError('required')">{{
+      getRequiredErrorMessage()
+    }}</mat-error>
+  </mat-form-field>
+  <button [disabled]="formGroup.invalid" type="submit">Register</button>
+</form>

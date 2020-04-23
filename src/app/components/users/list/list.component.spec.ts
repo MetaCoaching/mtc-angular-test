@@ -6,7 +6,7 @@ import { UserListComponent } from './list.component';
 import { UserService } from '../shared/users.service';
 import { User } from '../shared/user.model';
 
-describe('ListComponent', () => {
+describe('UserListComponent', () => {
   let fixture: ComponentFixture<UserListComponent>;
   const user: User = {
     firstName: 'Service',
