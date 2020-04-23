@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, DocumentReference } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 import { map } from 'rxjs/operators';
@@ -12,6 +12,10 @@ import { User } from './user.model';
 export class UserService {
   constructor(private firestore: AngularFirestore) {}
 
+  postUser(user: User): Promise<DocumentReference> {
+    return this.firestore.collection('users').add(user);
+  }
+
   getUsers(): Observable<User[]> {
     return this.firestore
       .collection<User>('users')
@@ -19,7 +23,7 @@ export class UserService {
       .pipe(
         map((users) => {
           users.forEach((user: User) => {
-            // Firebase stores a timestamp format that should be converted to a Date
+            // Firestore stores a timestamp format that should be converted to a Date
             user.birthDate = user.birthTimeStamp.toDate();
           });
           return users;
